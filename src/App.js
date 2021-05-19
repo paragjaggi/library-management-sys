@@ -3,13 +3,16 @@ import Header from './header';
 import store from './store/store';
 import * as actions from './store/actions';
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { HOST_NAME, PORT_NUM, LOGIN_URL, BOOKS_URL } from './url.constants';
+import BrowseBooks from './components/browsebooks';
+import SearchBooks from './components/searchbooks';
 
 window.store = store;
 window.actions = actions;
 const divStyle = {
   'width': '50%',
-  'marginTop': '20px',
+  'marginTop': '2em',
 };
 
 class App extends React.Component {
@@ -20,9 +23,21 @@ class App extends React.Component {
       userLoggedIn: false,
       displayModal: true,
       username: '',
-      password: ''
+      password: '',
+      booksData: []
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.fetchBooks = this.fetchBooks.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ userLoggedIn: store.getState().userLoggedIn });
+    if (!this.state.userLoggedIn) {
+      this.props.history.push('/');
+    } else {
+      this.props.history.push('/home');
+    }
   }
 
   showLoginButton() {
@@ -36,26 +51,60 @@ class App extends React.Component {
 
   loginUser() {
     if (this.state.username && this.state.password) {
-      fetch('http://localhost:3001/login/')
+      fetch(HOST_NAME + PORT_NUM + LOGIN_URL)
         .then(data => data.json())
         .then(response => {
           let filteredResult = response.filter(r =>
             r.username === this.state.username && r.password === this.state.password
           );
-          this.setState({ userLoggedIn : (filteredResult && filteredResult.length === 1)});
-          store.dispatch(actions.loginUser(true));
+          this.setState({ userLoggedIn: (filteredResult && filteredResult.length === 1) });
+          if (!this.state.userLoggedIn) {
+            alert('Wrong username/password combination');
+            this.setState({
+              username: '',
+              password: ''
+            });
+            this.props.history.push('/');
+          } else {
+            store.dispatch(actions.loginUser(this.state.userLoggedIn));
+            this.props.history.push('/home');
+            this.fetchBooks();
+          }
         })
     } else {
       alert('Please enter username and password');
     }
   }
 
+  fetchBooks() {
+    fetch(HOST_NAME + PORT_NUM + BOOKS_URL)
+      .then(data => data.json())
+      .then(response => {
+        if (response && response.length > 0) {
+          this.setState({
+            booksData: response
+          });
+        }
+      });
+  }
+
   showBody() {
     return (
       <Switch>
-        User logged in successfully!
+        <Route exact path="/home" render={() => (
+          <BrowseBooks booksData={this.state.booksData} />
+        )}/>
+        <Route exact path="/search" render={() => (
+          <SearchBooks booksData={this.state.booksData} />
+        )}/>
       </Switch>
     );
+  }
+
+  handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      this.loginUser();
+    }
   }
 
   showHideModal(value) {
@@ -84,7 +133,7 @@ class App extends React.Component {
               <div className="">
                 <label className="form-label">Password:</label>
                 <input type="password" name="password" value={this.state.password} maxLength="20" className="form-control"
-                  placeholder="Enter your password" onChange={this.handleChange} />
+                  placeholder="Enter your password" onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
               </div>
             </div>
             <div className="modal-footer">
@@ -99,18 +148,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Header userLoggedIn={this.state.userLoggedIn}></Header>
-          {
-            this.state.userLoggedIn === true ? this.showBody() :
-              this.state.displayModal === true ? this.showModal(this.state.userLoggedIn, this.state.displayModal) : this.showLoginButton()
-          }
-        </div>
-      </BrowserRouter>
+      <div className="App">
+        <Header userLoggedIn={this.state.userLoggedIn}></Header>
+        {
+          this.state.userLoggedIn === true ? this.showBody() :
+            this.state.displayModal === true ? this.showModal(this.state.userLoggedIn, this.state.displayModal) : this.showLoginButton()
+        }
+      </div>
     );
   }
 }
 
 
-export default App;
+export default withRouter(App);
