@@ -20,7 +20,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userLoggedIn: false,
+      userLoggedIn: "",
       displayModal: true,
       username: '',
       password: '',
@@ -33,7 +33,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.setState({ userLoggedIn: store.getState().userLoggedIn });
-    if (!this.state.userLoggedIn) {
+    if (this.state.userLoggedIn === "") {
       this.props.history.push('/');
     } else {
       this.props.history.push('/home');
@@ -57,8 +57,8 @@ class App extends React.Component {
           let filteredResult = response.filter(r =>
             r.username === this.state.username && r.password === this.state.password
           );
-          this.setState({ userLoggedIn: (filteredResult && filteredResult.length === 1) });
-          if (!this.state.userLoggedIn) {
+          this.setState({ userLoggedIn: (filteredResult && filteredResult.length === 1) ? this.state.username : "" });
+          if (this.state.userLoggedIn === "") {
             alert('Wrong username/password combination');
             this.setState({
               username: '',
@@ -67,8 +67,7 @@ class App extends React.Component {
             this.props.history.push('/');
           } else {
             store.dispatch(actions.loginUser(this.state.userLoggedIn));
-            this.props.history.push('/home');
-            this.fetchBooks();
+            this.fetchBooks(true);
           }
         })
     } else {
@@ -76,7 +75,7 @@ class App extends React.Component {
     }
   }
 
-  fetchBooks() {
+  fetchBooks(navigatToHome) {
     fetch(HOST_NAME + PORT_NUM + BOOKS_URL)
       .then(data => data.json())
       .then(response => {
@@ -84,7 +83,9 @@ class App extends React.Component {
           this.setState({
             booksData: response
           });
+          store.dispatch(actions.loadBooks(response));
         }
+        if (navigatToHome) this.props.history.push('/home');
       });
   }
 
@@ -93,10 +94,10 @@ class App extends React.Component {
       <Switch>
         <Route exact path="/home" render={() => (
           <BrowseBooks booksData={this.state.booksData} />
-        )}/>
+        )} />
         <Route exact path="/search" render={() => (
           <SearchBooks booksData={this.state.booksData} />
-        )}/>
+        )} />
       </Switch>
     );
   }
@@ -117,7 +118,10 @@ class App extends React.Component {
 
   showModal(userLoggedIn, displayModal) {
     return (
-      <div className="modal" role="dialog" style={{ display: (userLoggedIn === true && displayModal === false ? 'none' : 'contents') }}>
+      <div className="modal" role="dialog" style={{
+        display: (userLoggedIn !== "" && displayModal === false ? 'none' : 'inherit'),
+        'top': '5em'
+      }}>
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -151,7 +155,7 @@ class App extends React.Component {
       <div className="App">
         <Header userLoggedIn={this.state.userLoggedIn}></Header>
         {
-          this.state.userLoggedIn === true ? this.showBody() :
+          this.state.userLoggedIn !== "" ? this.showBody() :
             this.state.displayModal === true ? this.showModal(this.state.userLoggedIn, this.state.displayModal) : this.showLoginButton()
         }
       </div>

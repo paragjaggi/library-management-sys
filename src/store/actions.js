@@ -1,17 +1,17 @@
 import * as constants from './constants';
 
-export function loadBooks(payLoad) {
-    return { type: constants.LOAD_BOOKS, payLoad };
+export function loadBooks(payload) {
+    return { type: constants.LOAD_BOOKS, payload };
 }
 
-export function unloadBooks(payLoad) {
-    return { type: constants.UNLOAD_BOOKS, payLoad };
+export function unloadBooks(payload) {
+    return { type: constants.UNLOAD_BOOKS, payload };
 }
 
-export function loginUser(payLoad) {
-    return { type: constants.USER_LOGIN, payLoad };
+export function loginUser(payload) {
+    return { type: constants.USER_LOGIN, payload };
 }
 
-export function logoutUser(payLoad) {
-    return { type: constants.USER_LOGOUT, payLoad };
+export function logoutUser(payload) {
+    return { type: constants.USER_LOGOUT, payload };
 }

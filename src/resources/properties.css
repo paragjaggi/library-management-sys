@@ -1,0 +1,7 @@
+.line-through {
+    text-decoration: line-through;
+}
+
+.doubleUnderlined {
+    border-bottom: 3px dotted;
+}

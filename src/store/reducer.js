@@ -2,18 +2,37 @@ import * as constants from './constants';
 
 const initialState = {
   books: [],
-  userLoggedIn: false
+  userLoggedIn: ""
 };
 
 function rootReducer(state = initialState, action) {
-  if (action.type === constants.LOAD_BOOKS) {
-    state.books = action.payload;
-  } else if (action.type === constants.UNLOAD_BOOKS) {
-      state.books = [];
-  } else if (action.type === constants.USER_LOGIN) {
-      state.userLoggedIn = true;
-  } else if (action.type === constants.USER_LOGOUT) {
-      state.userLoggedIn = false;
+  switch (action.type) {
+    case constants.LOAD_BOOKS:
+      state = {
+        ...state,
+        books: action.payload
+      };
+      break;
+    case constants.UNLOAD_BOOKS:
+      state = {
+        ...state,
+        books: []
+      }
+      break;
+    case constants.USER_LOGIN:
+      state = {
+        ...state,
+        userLoggedIn: action.payload
+      }
+      break;
+    case action.type === constants.USER_LOGOUT:
+      state = {
+        ...state,
+        userLoggedIn: []
+      }
+      break;
+    default:
+      break;
   }
   return state;
 }

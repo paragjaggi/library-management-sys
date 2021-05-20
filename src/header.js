@@ -28,7 +28,7 @@ class Header extends React.Component {
                         <NavLink to="/home" className="nav-link">Home</NavLink>
                     </li>
                     {
-                        this.state.userLoggedIn === true ?
+                        this.state.userLoggedIn !== "" ?
                             <li className="nav-item">
                                 <NavLink to="/search" className="nav-link">Search Books</NavLink>
                             </li>
