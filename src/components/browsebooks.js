@@ -204,11 +204,11 @@ export default class BrowseBooks extends PureComponent {
                     </thead>
                     <tbody>
                         {
-                            this.books && this.books.length > 0 ?
+                            this.state.renderedBooks && this.state.renderedBooks.length > 0 ?
                                 this.state.renderedBooks
                                 :
                                 <tr className="text-center">
-                                    <th scope="row" colSpan="6">No books found</th>
+                                    <th scope="row" colSpan="7">No books found</th>
                                 </tr>
                         }
                     </tbody>

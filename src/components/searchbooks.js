@@ -275,7 +275,7 @@ export default class SearchBooks extends React.Component {
                                     this.state.renderedBooks
                                     :
                                     <tr className="text-center">
-                                        <th scope="row" colSpan="8">No books found</th>
+                                        <th scope="row" colSpan="11">No books found</th>
                                     </tr>
                             }
 
