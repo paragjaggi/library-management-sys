@@ -9,7 +9,7 @@ const imgStyle = {
     'height': '5em'
 }
 const divStyle = {
-    'maxWidth': '90%',
+    'maxWidth': '95%',
     'marginTop': '2em',
     'border': '1px black dotted',
     'padding': '2em',
@@ -217,7 +217,7 @@ export default class SearchBooks extends React.Component {
 
     uncheckAllCheckBoxes() {
         this.books.forEach(book => {
-            this.state.checkedOutBooks.forEach(checkedOutBook => {
+            this.state.checkedOutBooks?.forEach(checkedOutBook => {
                 if (book.id === checkedOutBook.id) {
                     book = checkedOutBook;
                 }

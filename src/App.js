@@ -119,10 +119,9 @@ class App extends React.Component {
   showModal(userLoggedIn, displayModal) {
     return (
       <div className="modal" role="dialog" style={{
-        display: (userLoggedIn !== "" && displayModal === false ? 'none' : 'inherit'),
-        'top': '5em'
+        display: (userLoggedIn !== "" && displayModal === false ? 'none' : 'inherit')
       }}>
-        <div className="modal-dialog" role="document">
+        <div className="modal-dialog" style={{ 'top': '5em' }} role="document">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">Login</h5>

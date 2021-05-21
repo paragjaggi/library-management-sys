@@ -26,8 +26,8 @@
       "title": "Unlocking Android",
       "id": "1933988673",
       "checkedOutBy": [
-        "parag",
-        "jaggi"
+        "jaggi",
+        "parag"
       ],
       "totalQuantity": 2,
       "leftQuantity": 0,
@@ -52,9 +52,13 @@
                               [
                                 [
                                   [
-                                    "W. Frank Ableson",
-                                    "Charlie Collins",
-                                    "Robi Sen"
+                                    [
+                                      [
+                                        "W. Frank Ableson",
+                                        "Charlie Collins",
+                                        "Robi Sen"
+                                      ]
+                                    ]
                                   ]
                                 ]
                               ]
@@ -85,8 +89,12 @@
                               [
                                 [
                                   [
-                                    "Open Source",
-                                    "Mobile"
+                                    [
+                                      [
+                                        "Open Source",
+                                        "Mobile"
+                                      ]
+                                    ]
                                   ]
                                 ]
                               ]
@@ -106,23 +114,27 @@
     {
       "title": "Android in Action, Second Edition",
       "id": "1935182722",
-      "checkedOutBy": [
-        "jaggi"
-      ],
+      "checkedOutBy": [],
       "totalQuantity": 1,
-      "leftQuantity": 0,
+      "leftQuantity": 1,
       "rack": 592,
       "publishedDate": "2011-01-14T00:00:00.000-0800",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson2.jpg",
       "shortDescription": "Android in Action, Second Edition is a comprehensive tutorial for Android developers. Taking you far beyond \"Hello Android,\" this fast-paced book puts you in the driver's seat as you learn important architectural concepts and implementation strategies. You'll master the SDK, build WebKit apps using HTML 5, and even learn to extend or replace Android's built-in features by building useful and intriguing examples. ",
       "longDescription": "When it comes to mobile apps, Android can do almost anything   and with this book, so can you! Android runs on mobile devices ranging from smart phones to tablets to countless special-purpose gadgets. It's the broadest mobile platform available.    Android in Action, Second Edition is a comprehensive tutorial for Android developers. Taking you far beyond \"Hello Android,\" this fast-paced book puts you in the driver's seat as you learn important architectural concepts and implementation strategies. You'll master the SDK, build WebKit apps using HTML 5, and even learn to extend or replace Android's built-in features by building useful and intriguing examples. ",
-      "status": "CHECKEDOUT",
+      "status": "AVAILABLE",
       "authors": [
         [
           [
             [
-              "W. Frank Ableson",
-              "Robi Sen"
+              [
+                [
+                  [
+                    "W. Frank Ableson",
+                    "Robi Sen"
+                  ]
+                ]
+              ]
             ]
           ]
         ]
@@ -131,7 +143,13 @@
         [
           [
             [
-              "Java"
+              [
+                [
+                  [
+                    "Java"
+                  ]
+                ]
+              ]
             ]
           ]
         ]
@@ -266,13 +284,21 @@
       "longDescription": "Although several options exist for interface development in Java, even popular UI toolkits like Swing have been notoriously complex and difficult to use. Griffon, an agile framework that uses Groovy to simplify Swing, makes UI development dramatically faster and easier. In many respects, Griffon is for desktop development what Grails is for web development. While it's based on Swing, its declarative style and approachable level of abstraction is instantly familiar to developers familiar with other technologies such as Flex or JavaFX.    Griffon in Action is a comprehensive tutorial written for Java developers who want a more productive approach to UI development. In this book, you'll immediately dive into Griffon. After a Griffon orientation and a quick Groovy tutorial, you'll start building examples that explore Griffon's high productivity approach to Swing development. One of the troublesome parts of Swing development is the amount of Java code that is required to get a simple application off the ground.    You'll learn how SwingBuilder (and its cousin builders) present a very palatable alternative in the form of a DSL geared towards building graphical user interfaces. Pair it up with the convention over configuration paradigm, a well tested and tried application source structure (based on Grails) and you have a recipe for quick and effective Swing application development. Griffon in Action covers declarative view development, like the one provided by JavaFX Script, as well as the structure, architecture and life cycle of Java application development",
       "status": "AVAILABLE",
       "authors": [
-        "Andres Almiray",
-        "Danno Ferrin",
-        "Parag Jaggi",
-        "James Shingler"
+        [
+          [
+            "Andres Almiray",
+            "Danno Ferrin",
+            "Parag Jaggi",
+            "James Shingler"
+          ]
+        ]
       ],
       "categories": [
-        "Java"
+        [
+          [
+            "Java"
+          ]
+        ]
       ]
     },
     {
@@ -2424,28 +2450,34 @@
     {
       "title": "Groovy in Action, Second Edition",
       "id": "1935182447",
-      "checkedOutBy": [
-        "parag"
-      ],
+      "checkedOutBy": [],
       "totalQuantity": 1,
-      "leftQuantity": 0,
+      "leftQuantity": 1,
       "rack": 700,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/koenig2.jpg",
       "shortDescription": "Groovy in Action, Second Edition is a thoroughly-revised, comprehensive guide to Groovy programming. It introduces Java developers to the dynamic features that Groovy provides, and shows you how to apply Groovy to a range of tasks including building new apps, integration with existing code, and DSL development.",
       "longDescription": "The first edition of Groovy in Action is the undisputed definitive reference on the Groovy language. Written by core members of the Groovy language team, this book presents Groovy like none other can   from the inside out. Since its introduction a few years back, Groovy has grown from an upstart dynamic language for the JVM to become an integral part of any Java developer's toolbox. Projects like Grails and Griffon have extended Groovy's reach into the web and desktop app world.    Groovy in Action, Second Edition is a thoroughly-revised, comprehensive guide to Groovy programming. It introduces Java developers to the dynamic features that Groovy provides, and shows you how to apply Groovy to a range of tasks including building new apps, integration with existing code, and DSL development.    This book introduces Groovy by example, presenting lots of reusable code while explaining the underlying concepts. Java developers new to Groovy find a smooth transition into the dynamic programming world. Groovy experts gain a solid reference that challenges them to explore Groovy deeply and creatively.    For readers learning it from scratch. Groovy in Action thoroughly moves through the Groovy basics, including:    Groovy's unique approach of optional typing  Simple and collective Groovy data types  Working with closures and Groovy control structures  The merits of Metaprogramming  Readers are presented with rich and detailed examples illustrating Groovy's enhancements to Java, including:    How to work with builders and the GDK  Database and XML programming with Groovy  Concurrency for the multicore era: actors, asynchronous collections and dataflow  Building Domain Specific languages   a very hot topic!  Groovy in Action then demonstrates how to integrate Groovy in Java projects and provides:    Tips and Tricks  Unit testing and build support  Groovy frameworks, including Grails, Griffon, and Groovy on Windows",
-      "status": "CHECKEDOUT",
+      "status": "AVAILABLE",
       "authors": [
-        "Dierk König",
-        "Guillaume Laforge",
-        "Paul King",
-        "Cédric Champeau",
-        "Hamlet D'Arcy",
-        "Erik Pragt",
-        "Parag Jaggi",
-        "Jon Skeet"
+        [
+          [
+            "Dierk König",
+            "Guillaume Laforge",
+            "Paul King",
+            "Cédric Champeau",
+            "Hamlet D'Arcy",
+            "Erik Pragt",
+            "Parag Jaggi",
+            "Jon Skeet"
+          ]
+        ]
       ],
       "categories": [
-        "Java"
+        [
+          [
+            "Java"
+          ]
+        ]
       ]
     },
     {

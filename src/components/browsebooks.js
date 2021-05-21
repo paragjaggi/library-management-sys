@@ -4,7 +4,7 @@ import * as actions from '../store/actions';
 import '../resources/properties.css';
 
 const divStyle = {
-    'maxWidth': '90%',
+    'maxWidth': '95%',
     'marginTop': '2em',
     'border': '1px black dotted',
     'padding': '2em',
@@ -168,7 +168,7 @@ export default class BrowseBooks extends PureComponent {
 
     uncheckAllCheckBoxes() {
         this.books.forEach(book => {
-            this.state.checkedInBooks.forEach(checkedInBook => {
+            this.state.checkedInBooks?.forEach(checkedInBook => {
                 if (book.id === checkedInBook.id) {
                     book = checkedInBook;
                 }
