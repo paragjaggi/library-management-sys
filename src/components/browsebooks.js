@@ -74,7 +74,6 @@ export default class BrowseBooks extends PureComponent {
                 <td>{date.toUTCString()}</td>
                 <td>{authors}</td>
                 <td>{categories}</td>
-                <td>{element.rack}</td>
             </tr>
         );
     }
@@ -85,7 +84,6 @@ export default class BrowseBooks extends PureComponent {
                 <td>{element.title}</td>
                 <td>{authors}</td>
                 <td>{categories}</td>
-                <td>{element.rack}</td>
             </tr>
         );
     }
@@ -124,7 +122,6 @@ export default class BrowseBooks extends PureComponent {
                                             <th scope="col">Title</th>
                                             <th scope="col">Authors</th>
                                             <th scope="col">Categories</th>
-                                            <th scope="col">Rack</th>
                                         </tr>
                                     </thead>
                                     <tbody>

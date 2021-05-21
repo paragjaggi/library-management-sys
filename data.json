@@ -957,9 +957,11 @@
     {
       "title": "Android in Practice",
       "id": "1935182927",
-      "checkedOutBy": [],
+      "checkedOutBy": [
+        "parag"
+      ],
       "totalQuantity": 2,
-      "leftQuantity": 2,
+      "leftQuantity": 1,
       "rack": 500,
       "publishedDate": "2011-09-30T00:00:00.000-0700",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/collins.jpg",
