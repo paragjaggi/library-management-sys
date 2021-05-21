@@ -33,9 +33,7 @@ class Header extends React.Component {
                                 <NavLink to="/search" className="nav-link">Search Books</NavLink>
                             </li>
                             :
-                            <li className="nav-item">
-                                <NavLink to="/register" className="nav-link">Register</NavLink>
-                            </li>
+                            <li></li>
                     }
 
                 </ul>

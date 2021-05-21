@@ -212,7 +212,8 @@ export default class SearchBooks extends React.Component {
                         checkedOutBooks: [],
                         checkedOutBooksRendered: '',
                         searchClicked: false,
-                        renderedBooks: []
+                        renderedBooks: [],
+                        searchTerm: ''
                     });
                 })
                 .catch(error => {
@@ -249,7 +250,7 @@ export default class SearchBooks extends React.Component {
                         <Dropdown.Item eventKey="Categories">Category</Dropdown.Item>
                     </DropdownButton>
                     <div className="form-outline">
-                        <input type="search" id="searchTerm" name="searchTerm" style={{ 'width': '35em' }} className="form-control"
+                        <input type="search" value={this.state.searchTerm} name="searchTerm" style={{ 'width': '35em' }} className="form-control"
                             onChange={this.handleChange} onKeyDown={this.handleKeyDown} />
                     </div>
                     <button type="button" className="btn btn-secondary" onClick={() => this.searchBooks()}>
