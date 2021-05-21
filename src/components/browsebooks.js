@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import store from '../store/store';
 import * as actions from '../store/actions';
 import '../resources/properties.css';
+import { HOST_NAME, PORT_NUM, BOOKS_URL } from '../url.constants';
 
 const divStyle = {
     'maxWidth': '95%',
@@ -46,14 +47,12 @@ export default class BrowseBooks extends PureComponent {
         let renderedBooks = [];
         books.forEach((element, index) => {
             let date = new Date(element.publishedDate);
-            element.categories = [element.categories];
-            let categories = element.categories.map(function (val) {
+            let categories = element.categories.length > 1 ? element.categories.map(function (val) {
                 return val;
-            }).join(',');
-            element.authors = [element.authors];
-            let authors = element.authors.map(function (val) {
+            }).join(',') : element.categories;
+            let authors = element.authors.length ? element.authors.map(function (val) {
                 return val;
-            }).join(',');
+            }).join(',') : element.authors;
             renderedBooks.push(
                 extraFields ? this.fullTableRow(index, element, date, authors, categories)
                     : this.smallTableRow(index, element, authors, categories)
@@ -151,19 +150,24 @@ export default class BrowseBooks extends PureComponent {
                 element.status = "AVAILABLE";
             }
             element.checkedOutBy.splice(element.checkedOutBy.indexOf(this.loggedInUser), 1);
-            fetch('http://localhost:3001/books/' + element.id,
+            fetch(HOST_NAME + PORT_NUM + BOOKS_URL + '/' + element.id,
                 {
                     headers: { 'Content-Type': 'application/json' },
                     method: 'PUT',
                     body: JSON.stringify(element),
                 })
                 .then(data => data.json())
-                .then(response => console.log(response))
+                .then(response => {
+                    alert("Checked in successfully!!");
+                    this.setState({ displayModal: false });
+                    this.uncheckAllCheckBoxes();
+                    this.componentDidMount();
+                })
+                .catch(error => {
+                    alert("An error occured. Please check the logs");
+                    console.log(console.log);
+                })
         });
-        alert("Checked in successfully!!");
-        this.setState({ displayModal: false });
-        this.uncheckAllCheckBoxes();
-        this.componentDidMount();
     }
 
     uncheckAllCheckBoxes() {

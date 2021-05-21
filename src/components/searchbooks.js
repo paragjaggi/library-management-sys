@@ -3,6 +3,7 @@ import { DropdownButton, Dropdown } from 'react-bootstrap';
 import store from '../store/store';
 import * as actions from '../store/actions';
 import '../resources/properties.css';
+import { HOST_NAME, PORT_NUM, BOOKS_URL } from '../url.constants';
 
 const imgStyle = {
     'width': '5em',
@@ -68,7 +69,8 @@ export default class SearchBooks extends React.Component {
         let renderedBooks = this.createRowsOfBooks(filteredBooks, true);
         this.setState({
             renderedBooks: renderedBooks
-        })
+        });
+        this.uncheckAllCheckBoxes();
     }
 
     createRowsOfBooks(books, extraFields) {
@@ -194,24 +196,29 @@ export default class SearchBooks extends React.Component {
                 element.status = "CHECKEDOUT";
             }
             element.checkedOutBy.push(this.loggedInUser);
-            fetch('http://localhost:3001/books/' + element.id,
+            fetch(HOST_NAME + PORT_NUM + BOOKS_URL + '/' + element.id,
                 {
                     headers: { 'Content-Type': 'application/json' },
                     method: 'PUT',
                     body: JSON.stringify(element),
                 })
                 .then(data => data.json())
-                .then(response => console.log(response))
-        });
-        alert("Checked out successfully!!");
-        this.setState({ displayModal: false });
-        this.uncheckAllCheckBoxes();
-        this.componentDidMount();
-        this.setState({
-            checkedOutBooks: [],
-            checkedOutBooksRendered: '',
-            searchClicked: false,
-            renderedBooks: []
+                .then(response => {
+                    alert("Checked out successfully!!");
+                    this.setState({ displayModal: false });
+                    this.uncheckAllCheckBoxes();
+                    this.componentDidMount();
+                    this.setState({
+                        checkedOutBooks: [],
+                        checkedOutBooksRendered: '',
+                        searchClicked: false,
+                        renderedBooks: []
+                    });
+                })
+                .catch(error => {
+                    alert("An error occured. Please check the logs");
+                    console.log(console.log);
+                });
         });
     }
 

@@ -26,89 +26,24 @@
       "title": "Unlocking Android",
       "id": "1933988673",
       "checkedOutBy": [
-        "jaggi",
-        "parag"
+        "jaggi"
       ],
       "totalQuantity": 2,
-      "leftQuantity": 0,
+      "leftQuantity": 1,
       "rack": 416,
       "publishedDate": "2009-04-01T00:00:00.000-0700",
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg",
       "shortDescription": "Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout.",
       "longDescription": "Android is an open source mobile phone platform based on the Linux operating system and developed by the Open Handset Alliance, a consortium of over 30 hardware, software and telecom companies that focus on open standards for mobile devices. Led by search giant, Google, Android is designed to deliver a better and more open and cost effective mobile experience.    Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout. Based on his mobile development experience and his deep knowledge of the arcane Android technical documentation, the author conveys the know-how you need to develop practical applications that build upon or replace any of Androids features, however small.    Unlocking Android: A Developer's Guide prepares the reader to embrace the platform in easy-to-understand language and builds on this foundation with re-usable Java code examples. It is ideal for corporate and hobbyists alike who have an interest, or a mandate, to deliver software functionality for cell phones.    WHAT'S INSIDE:        * Android's place in the market      * Using the Eclipse environment for Android development      * The Intents - how and why they are used      * Application classes:            o Activity            o Service            o IntentReceiver       * User interface design      * Using the ContentProvider to manage data      * Persisting data with the SQLite database      * Networking examples      * Telephony applications      * Notification methods      * OpenGL, animation & multimedia      * Sample Applications  ",
-      "status": "CHECKEDOUT",
+      "status": "AVAILABLE",
       "authors": [
-        [
-          [
-            [
-              [
-                [
-                  [
-                    [
-                      [
-                        [
-                          [
-                            [
-                              [
-                                [
-                                  [
-                                    [
-                                      [
-                                        "W. Frank Ableson",
-                                        "Charlie Collins",
-                                        "Robi Sen"
-                                      ]
-                                    ]
-                                  ]
-                                ]
-                              ]
-                            ]
-                          ]
-                        ]
-                      ]
-                    ]
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
+        "W. Frank Ableson",
+        "Charlie Collins",
+        "Robi Sen"
       ],
       "categories": [
-        [
-          [
-            [
-              [
-                [
-                  [
-                    [
-                      [
-                        [
-                          [
-                            [
-                              [
-                                [
-                                  [
-                                    [
-                                      [
-                                        "Open Source",
-                                        "Mobile"
-                                      ]
-                                    ]
-                                  ]
-                                ]
-                              ]
-                            ]
-                          ]
-                        ]
-                      ]
-                    ]
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
+        "Open Source",
+        "Mobile"
       ]
     },
     {
@@ -124,35 +59,11 @@
       "longDescription": "When it comes to mobile apps, Android can do almost anything   and with this book, so can you! Android runs on mobile devices ranging from smart phones to tablets to countless special-purpose gadgets. It's the broadest mobile platform available.    Android in Action, Second Edition is a comprehensive tutorial for Android developers. Taking you far beyond \"Hello Android,\" this fast-paced book puts you in the driver's seat as you learn important architectural concepts and implementation strategies. You'll master the SDK, build WebKit apps using HTML 5, and even learn to extend or replace Android's built-in features by building useful and intriguing examples. ",
       "status": "AVAILABLE",
       "authors": [
-        [
-          [
-            [
-              [
-                [
-                  [
-                    "W. Frank Ableson",
-                    "Robi Sen"
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
+        "W. Frank Ableson",
+        "Robi Sen"
       ],
       "categories": [
-        [
-          [
-            [
-              [
-                [
-                  [
-                    "Java"
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
+        "Java"
       ]
     },
     {
@@ -284,21 +195,13 @@
       "longDescription": "Although several options exist for interface development in Java, even popular UI toolkits like Swing have been notoriously complex and difficult to use. Griffon, an agile framework that uses Groovy to simplify Swing, makes UI development dramatically faster and easier. In many respects, Griffon is for desktop development what Grails is for web development. While it's based on Swing, its declarative style and approachable level of abstraction is instantly familiar to developers familiar with other technologies such as Flex or JavaFX.    Griffon in Action is a comprehensive tutorial written for Java developers who want a more productive approach to UI development. In this book, you'll immediately dive into Griffon. After a Griffon orientation and a quick Groovy tutorial, you'll start building examples that explore Griffon's high productivity approach to Swing development. One of the troublesome parts of Swing development is the amount of Java code that is required to get a simple application off the ground.    You'll learn how SwingBuilder (and its cousin builders) present a very palatable alternative in the form of a DSL geared towards building graphical user interfaces. Pair it up with the convention over configuration paradigm, a well tested and tried application source structure (based on Grails) and you have a recipe for quick and effective Swing application development. Griffon in Action covers declarative view development, like the one provided by JavaFX Script, as well as the structure, architecture and life cycle of Java application development",
       "status": "AVAILABLE",
       "authors": [
-        [
-          [
-            "Andres Almiray",
-            "Danno Ferrin",
-            "Parag Jaggi",
-            "James Shingler"
-          ]
-        ]
+        "Andres Almiray",
+        "Danno Ferrin",
+        "Parag Jaggi",
+        "James Shingler"
       ],
       "categories": [
-        [
-          [
-            "Java"
-          ]
-        ]
+        "Java"
       ]
     },
     {
@@ -2732,16 +2635,14 @@
     {
       "title": "F# in Action",
       "id": "1935182250",
-      "checkedOutBy": [
-        "parag"
-      ],
+      "checkedOutBy": [],
       "totalQuantity": 1,
-      "leftQuantity": 0,
+      "leftQuantity": 1,
       "rack": 425,
       "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/laucher.jpg",
       "shortDescription": "F# in Action introduces the F# language, but it goes well beyond the standard tutorial and reference approach. F# expert Amanda Laucher draws on her extensive experience deploying F#-based solutions to show you how to use F# in real, day-to-day work.",
       "longDescription": "Microsoft's F# offers a true functional programming language for the .NET platform. The \"functional programming\" approach creates exceptionally stable, fault-tolerant code that's especially efficient for the concurrent programming requirements of multi-processor and high-availability applications. F# builds on the legacy of Erlang, Haskel, and OCaml, adding full .NET support and easy interoperability with C# and other .NET platform features.    F# in Action introduces the F# language, but it goes well beyond the standard tutorial and reference approach. F# expert Amanda Laucher draws on her extensive experience deploying F#-based solutions to show you how to use F# in real, day-to-day work. You'll see \"Greenfield\" examples, where you build new F# programs from scratch. You'll also dig into \"Brownfield\" scenarios, where you integrate F# code into in-place systems. Along the way, you'll master the functional programming style and learn where and how to apply it most effectively.",
-      "status": "CHECKEDOUT",
+      "status": "AVAILABLE",
       "authors": [
         "Amanda Laucher"
       ],
